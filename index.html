@@ -15,7 +15,7 @@
         </header>
 
         <section class="sidebar">
-            <button>Add Book</button>
+            <button id="addBookBTN">Add Book</button>
         </section>
 
         <section class="main_cards">
@@ -43,8 +43,30 @@
                 <p>Read?</p>
             </article>
 
-
         </section>
+
+        <form id="addBookForm" action="">
+            <fieldset>
+                <label for="book_title">BOOK TITLE*
+                    <input type="text" name="bookTitle" id="book_title" required>
+                </label>
+
+                <label for="author">AUTHOR*
+                    <input type="text" name="author" id="author" required>
+                </label>
+
+                <label for="genre">GENRE*
+                    <input type="text" name="genre" id="genre" required>
+                </label>
+
+                <label for="pages">PAGES*
+                    <input type="number" name="pages" id="pages" required>
+                </label>
+            </fieldset>
+
+            <button>LOG BOOK</button>
+            
+        </form>
 
         <footer>
 
