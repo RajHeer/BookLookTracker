@@ -33,4 +33,6 @@
     border: solid green;
 }
 
-
+#addBookForm {
+    display: none;
+}
