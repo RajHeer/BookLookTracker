@@ -4,6 +4,7 @@ const mainGrid = document.querySelector('.main_cards');
 const addBookBTN = document.querySelector('#addBookBTN');
 const addBookFORM = document.querySelector('#addBookForm');
 const logBookBTN = document.querySelector('#log_book');
+const form = document.querySelector('#addBookForm');
 
 // LISTENERS //
 
@@ -26,4 +27,15 @@ logBookBTN.addEventListener('click', () => {
     const newBookCard = document.createElement('article');
     newBookCard.innerHTML = bookDetails;
     mainGrid.appendChild(newBookCard);
+});
+
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const bookdata = {};
+  for (const pair of formData.entries()) {
+    bookdata[pair[0]]=pair[1];
+  }
+  console.log(bookdata);
 });
