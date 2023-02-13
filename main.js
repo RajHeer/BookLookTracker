@@ -3,10 +3,26 @@
 const mainGrid = document.querySelector('.main_cards');
 const addBookBTN = document.querySelector('#addBookBTN');
 const addBookFORM = document.querySelector('#addBookForm');
-const logBookBTN = document.querySelector('#log_book');
 const form = document.querySelector('#addBookForm');
 
-let library = [];
+// DATA //
+
+let library = [
+  {
+    bookTitle: "Wolf Hall",
+    author: "Hilary Mantel",
+    genre: "Historical Fiction",
+    pages: 580,
+    read: "yes"
+  },
+  {
+    bookTitle: "Dune",
+    author: "Frank Herbert",
+    genre: "Sci-Fi",
+    pages: 490,
+    read: "yes"
+  }
+];
 
 // LISTENERS //
 
@@ -18,20 +34,6 @@ addBookBTN.addEventListener('click', () => {
       }
 });
 
-logBookBTN.addEventListener('click', () => {
-    const bookDetails = `
-                <h2>Book Added</h2>
-                <p>Author</p>
-                <p>Genre</p>
-                <p>Pages</p>
-                <p>Read?</p>
-    `;
-    const newBookCard = document.createElement('article');
-    newBookCard.innerHTML = bookDetails;
-    mainGrid.appendChild(newBookCard);
-});
-
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const formData = new FormData(form);
@@ -41,7 +43,7 @@ form.addEventListener('submit', (e) => {
   }
   let newBook = new Book(bookdata);
   library.push(newBook);
-  console.log(library);
+  generateBooks();
 });
 
 // CONSTRUCTOR //
@@ -51,3 +53,19 @@ function Book({bookTitle, author, genre, pages}) {
   this.genre = genre,
   this.pages = pages
 }
+
+// FUNCTION //
+
+function generateBooks() {
+  library.forEach(book => {
+    const bookHTML = `
+              <h2>${book.bookTitle}</h2>
+              <p>Author: ${book.author}</p>
+              <p>Genre: ${book.genre}</p>
+              <p>Pages: ${book.pages}</p>
+  `;
+  const newBookCard = document.createElement('article');
+  newBookCard.innerHTML = bookHTML;
+  mainGrid.appendChild(newBookCard);
+  })
+};
