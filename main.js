@@ -6,6 +6,8 @@ const addBookFORM = document.querySelector('#addBookForm');
 const logBookBTN = document.querySelector('#log_book');
 const form = document.querySelector('#addBookForm');
 
+let library = [];
+
 // LISTENERS //
 
 addBookBTN.addEventListener('click', () => {
@@ -37,5 +39,15 @@ form.addEventListener('submit', (e) => {
   for (const pair of formData.entries()) {
     bookdata[pair[0]]=pair[1];
   }
-  console.log(bookdata);
+  let newBook = new Book(bookdata);
+  library.push(newBook);
+  console.log(library);
 });
+
+// CONSTRUCTOR //
+function Book({bookTitle, author, genre, pages}) {
+  this.bookTitle = bookTitle,
+  this.author = author,
+  this.genre = genre,
+  this.pages = pages
+}
