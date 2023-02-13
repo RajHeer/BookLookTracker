@@ -57,6 +57,7 @@ function Book({bookTitle, author, genre, pages}) {
 // FUNCTION //
 
 function generateBooks() {
+  removeCards();
   library.forEach(book => {
     const bookHTML = `
               <h2>${book.bookTitle}</h2>
@@ -65,7 +66,19 @@ function generateBooks() {
               <p>Pages: ${book.pages}</p>
   `;
   const newBookCard = document.createElement('article');
+  newBookCard.classList.add("card");
   newBookCard.innerHTML = bookHTML;
   mainGrid.appendChild(newBookCard);
   })
 };
+
+function removeCards() {
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => {
+    card.remove();
+  })
+
+}
+
+
+generateBooks(); // dummy data 'library' is used to generate book cards for page load //
