@@ -3,7 +3,6 @@
 const mainGrid = document.querySelector('.main_cards');
 const addBookBTN = document.querySelector('#addBookBTN');
 const addBookFORM = document.querySelector('#addBookForm');
-const form = document.querySelector('#addBookForm');
 
 // DATA //
 
@@ -34,9 +33,9 @@ addBookBTN.addEventListener('click', () => {
       }
 });
 
-form.addEventListener('submit', (e) => {
+addBookFORM.addEventListener('submit', (e) => {
   e.preventDefault();
-  const formData = new FormData(form);
+  const formData = new FormData(addBookFORM);
   const bookdata = {};
   for (const pair of formData.entries()) {
     bookdata[pair[0]]=pair[1];
@@ -46,6 +45,15 @@ form.addEventListener('submit', (e) => {
   generateBooks();
 });
 
+function addDeleteListeners() {
+  const deleteBTNS = document.querySelectorAll('.delete');
+  deleteBTNS.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      deleteOneCard(e.target.dataset.delete);
+    });
+  })
+}
+
 // CONSTRUCTOR //
 function Book({bookTitle, author, genre, pages}) {
   this.bookTitle = bookTitle,
@@ -54,9 +62,10 @@ function Book({bookTitle, author, genre, pages}) {
   this.pages = pages
 }
 
-// FUNCTION //
+// FUNCTIONS //
 
 function generateBooks() {
+  // remove all cards before generating new set //
   removeCards();
   library.forEach((book, index) => {
     const bookHTML = `
@@ -64,22 +73,29 @@ function generateBooks() {
               <p>Author: ${book.author}</p>
               <p>Genre: ${book.genre}</p>
               <p>Pages: ${book.pages}</p>
+              <button data-delete=${index} class='delete'>REMOVE</button>
   `;
   const newBookCard = document.createElement('article');
-  newBookCard.setAttribute("id", index);
-  newBookCard.classList.add("card");
+  newBookCard.setAttribute('data-card', index);
+  newBookCard.classList.add('card');
   newBookCard.innerHTML = bookHTML;
   mainGrid.appendChild(newBookCard);
   })
+  addDeleteListeners();
 }
 
+// removes all cards //
 function removeCards() {
   const allCards = document.querySelectorAll('.card');
   allCards.forEach(card => {
     card.remove();
   })
-
 }
 
+function deleteOneCard(num) {
+  const toBeDeleted = document.querySelector(`[data-card='${num}']`)
+  toBeDeleted.remove();
+}
 
 generateBooks(); // dummy data 'library' is used to generate book cards for page load //
+const removeBTNS = document.querySelectorAll('.remove');
