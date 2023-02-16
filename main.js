@@ -51,6 +51,7 @@ function addDeleteListeners() {
   deleteBTNS.forEach(btn => {
     btn.addEventListener('click', (e) => {
       deleteOneCard(e.target.dataset.delete);
+      generateBooks();
     });
   })
 }
@@ -97,6 +98,7 @@ function removeCards() {
 function deleteOneCard(num) {
   const toBeDeleted = document.querySelector(`[data-card='${num}']`)
   toBeDeleted.remove();
+  library.splice(num, 1);
 }
 
 generateBooks(); // dummy data 'library' is used to generate book cards for page load //

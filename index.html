@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookLookTracker</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script src="main.js" defer></script>
-</head>
-<body>
-    <main class="flex_container">
-        <header class="header">
-            <h1>BookLookTracker</h1>
-        </header>
 
-        <section class="sidebar">
-            <button id="addBookBTN">Add Book</button>
-        </section>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookLookTracker</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="main.js" defer></script>
+    </head>
 
-        <section class="main_cards">
-        </section>
+    <body>
+        <main class="flex_container">
+            <header class="header">
+                <h1>BookLookTracker</h1>
+            </header>
 
-        <form id="addBookForm" action="">
-            <fieldset>
-                <label for="book_title">BOOK TITLE*
-                    <input type="text" name="bookTitle" id="book_title" required>
-                </label>
+            <section class="sidebar">
+                <button id="addBookBTN">Add Book</button>
+            </section>
 
-                <label for="author">AUTHOR*
-                    <input type="text" name="author" id="author" required>
-                </label>
+            <section class="main_cards">
+            </section>
 
-                <label for="genre">GENRE*
-                    <input type="text" name="genre" id="genre" required>
-                </label>
+            <form id="addBookForm" action="">
+                <fieldset>
+                    <label for="book_title">BOOK TITLE*
+                        <input type="text" name="bookTitle" id="book_title" required>
+                    </label>
 
-                <label for="pages">PAGES*
-                    <input type="number" name="pages" id="pages" required>
-                </label>
-            </fieldset>
+                    <label for="author">AUTHOR*
+                        <input type="text" name="author" id="author" required>
+                    </label>
 
-            <button type="submit" id="log_book">LOG BOOK</button>
+                    <label for="genre">GENRE*
+                        <input type="text" name="genre" id="genre" required>
+                    </label>
 
-        </form>
-
+                    <label for="pages">PAGES*
+                        <input type="number" name="pages" id="pages" required>
+                    </label>
+                </fieldset>
+                <button type="submit" id="log_book">LOG BOOK</button>
+            </form>
+        </main>
         <footer>
+        </footer> 
+    </body>
 
-        </footer>
-
-        
-
-    </main>
-    
-</body>
 </html>

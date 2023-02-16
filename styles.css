@@ -10,7 +10,7 @@
 .flex_container {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 100px 3fr;
 }
 
 .header {
@@ -26,7 +26,7 @@
 .main_cards {
     display: grid;
     gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
 }
 
 .card {
