@@ -43,6 +43,7 @@ addBookFORM.addEventListener('submit', (e) => {
   let newBook = new Book(bookdata);
   library.push(newBook);
   generateBooks();
+  addBookFORM.reset();
 });
 
 function addDeleteListeners() {
@@ -92,6 +93,7 @@ function removeCards() {
   })
 }
 
+// delete specified card passed to the deleteBTNs event listener //
 function deleteOneCard(num) {
   const toBeDeleted = document.querySelector(`[data-card='${num}']`)
   toBeDeleted.remove();
