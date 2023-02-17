@@ -28,7 +28,7 @@ body {
 
 .sidebar {
     grid-column: 1;
-    border: solid red;
+    border: solid green;
     display: flex;
     justify-content: center;
     align-items: center;
