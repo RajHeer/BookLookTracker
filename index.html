@@ -17,32 +17,32 @@
             </header>
 
             <section class="sidebar">
-                <button id="addBookBTN">Add Book</button>
+                <button id="addBookBTN">+</button>
+                <form id="addBookForm" action="">
+                    <fieldset>
+                        <label for="book_title">BOOK TITLE*
+                            <input type="text" name="bookTitle" id="book_title" required>
+                        </label>
+    
+                        <label for="author">AUTHOR*
+                            <input type="text" name="author" id="author" required>
+                        </label>
+    
+                        <label for="genre">GENRE*
+                            <input type="text" name="genre" id="genre" required>
+                        </label>
+    
+                        <label for="pages">PAGES*
+                            <input type="number" name="pages" id="pages" required>
+                        </label>
+                    </fieldset>
+                    <button type="submit" id="log_book">LOG BOOK</button>
+                </form>
             </section>
 
             <section class="main_cards">
             </section>
 
-            <form id="addBookForm" action="">
-                <fieldset>
-                    <label for="book_title">BOOK TITLE*
-                        <input type="text" name="bookTitle" id="book_title" required>
-                    </label>
-
-                    <label for="author">AUTHOR*
-                        <input type="text" name="author" id="author" required>
-                    </label>
-
-                    <label for="genre">GENRE*
-                        <input type="text" name="genre" id="genre" required>
-                    </label>
-
-                    <label for="pages">PAGES*
-                        <input type="number" name="pages" id="pages" required>
-                    </label>
-                </fieldset>
-                <button type="submit" id="log_book">LOG BOOK</button>
-            </form>
         </main>
         <footer>
         </footer> 

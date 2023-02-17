@@ -28,8 +28,10 @@ let library = [
 addBookBTN.addEventListener('click', () => {
     if (addBookFORM.style.display === 'none') {
         addBookFORM.style.display = 'block';
+        addBookBTN.innerHTML = '-';
       } else {
         addBookFORM.style.display = 'none';
+        addBookBTN.innerHTML = '+';
       }
 });
 
@@ -43,7 +45,7 @@ addBookFORM.addEventListener('submit', (e) => {
   let newBook = new Book(bookdata);
   library.push(newBook);
   generateBooks();
-  addBookFORM.reset();
+  // addBookFORM.reset();
 });
 
 function addDeleteListeners() {
