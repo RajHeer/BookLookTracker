@@ -18,22 +18,26 @@
 
             <section class="sidebar">
                 <button id="addBookBTN">+</button>
-                <form id="addBookForm" action="">
+                <form id="addBookForm" action="" novalidate>
                     <fieldset>
                         <label for="book_title">BOOK TITLE*
                             <input type="text" name="bookTitle" id="book_title" required>
+                            <span class="error"></span>
                         </label>
     
                         <label for="author">AUTHOR*
                             <input type="text" name="author" id="author" required>
+                            <span class="error"></span>
                         </label>
     
                         <label for="genre">GENRE*
                             <input type="text" name="genre" id="genre" required>
+                            <span class="error"></span>
                         </label>
     
                         <label for="pages">PAGES*
                             <input type="number" name="pages" id="pages" required>
+                            <span class="error"></span>
                         </label>
                     </fieldset>
                     <button type="submit" id="log_book">LOG BOOK</button>

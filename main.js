@@ -3,6 +3,7 @@
 const mainGrid = document.querySelector('.main_cards');
 const addBookBTN = document.querySelector('#addBookBTN');
 const addBookFORM = document.querySelector('#addBookForm');
+const inputsAll = document.querySelectorAll('input');
 
 // DATA //
 
@@ -35,8 +36,28 @@ addBookBTN.addEventListener('click', () => {
       }
 });
 
+// Loops over each input, adds listener
+// that on typing selects resets any error 
+// messages if warranted or calls func.
+inputsAll.forEach(input => {
+  input.addEventListener('input', (e) => {
+    const inputError = input.nextElementSibling;
+    if (input.validity.valid) {
+      inputError.textContent = '';
+      // inputError.className = 'error';
+    } else {
+      showError();
+    }
+  })
+});
+
 addBookFORM.addEventListener('submit', (e) => {
   e.preventDefault();
+  inputsAll.forEach(input => {
+    if (!input.validity.valid) {
+      showError();
+    }
+  });
   getFormDataAndToArray();
   // addBookFORM.reset();
 });
@@ -60,6 +81,17 @@ function Book({bookTitle, author, genre, pages}) {
 }
 
 // FUNCTIONS //
+
+function showError() {
+  inputsAll.forEach(input => {
+    const inputError = input.nextElementSibling;
+    if (input.validity.valueMissing) {
+      inputError.textContent = "Please enter details.";
+    }
+  })
+  // Set the styling appropriately
+  inputError.className = "error active";
+}
 
 function getFormDataAndToArray() {
   const formData = new FormData(addBookFORM);
