@@ -55,7 +55,7 @@ addBookFORM.addEventListener('submit', (e) => {
   e.preventDefault();
   inputsAll.forEach(input => {
     if (!input.validity.valid) {
-      showError();
+      showError(input);
     }
   });
   getFormDataAndToArray();
@@ -82,15 +82,15 @@ function Book({bookTitle, author, genre, pages}) {
 
 // FUNCTIONS //
 
-function showError() {
-  inputsAll.forEach(input => {
+function showError(input) {
+  // inputsAll.forEach(input => {
     const inputError = input.nextElementSibling;
     if (input.validity.valueMissing) {
       inputError.textContent = "Please enter details.";
     }
-  })
-  // Set the styling appropriately
-  inputError.className = "error active";
+    // Set the styling appropriately
+    inputError.className = "error active";
+  // }) 
 }
 
 function getFormDataAndToArray() {
