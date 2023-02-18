@@ -37,14 +37,7 @@ addBookBTN.addEventListener('click', () => {
 
 addBookFORM.addEventListener('submit', (e) => {
   e.preventDefault();
-  const formData = new FormData(addBookFORM);
-  const bookdata = {};
-  for (const pair of formData.entries()) {
-    bookdata[pair[0]]=pair[1];
-  }
-  let newBook = new Book(bookdata);
-  library.push(newBook);
-  generateBooks();
+  getFormDataAndToArray();
   // addBookFORM.reset();
 });
 
@@ -67,6 +60,17 @@ function Book({bookTitle, author, genre, pages}) {
 }
 
 // FUNCTIONS //
+
+function getFormDataAndToArray() {
+  const formData = new FormData(addBookFORM);
+  const bookdata = {};
+  for (const pair of formData.entries()) {
+    bookdata[pair[0]]=pair[1];
+  }
+  let newBook = new Book(bookdata);
+  library.push(newBook);
+  generateBooks();
+}
 
 function generateBooks() {
   // remove all cards before generating new set //
