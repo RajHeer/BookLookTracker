@@ -9,7 +9,9 @@
 
 body {
     font-family: 'Vollkorn', serif;
-}
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), rgb(255, 255, 255) 180px), url(./assets/ashim-d-silva-P8gLaJ-PZL0-unsplash.jpg);
+    background-size: cover;
+}   
 
 /* MAIN PAGE GRID */
 
