@@ -26,6 +26,7 @@ let library = [
 
 // LISTENERS //
 
+// Toggle display on form to add book.
 addBookBTN.addEventListener('click', () => {
     if (addBookFORM.style.display === 'none') {
         addBookFORM.style.display = 'block';
@@ -44,13 +45,17 @@ inputsAll.forEach(input => {
     const inputError = input.nextElementSibling;
     if (input.validity.valid) {
       inputError.textContent = '';
-      // inputError.className = 'error';
+      inputError.className = 'error';
     } else {
       showError();
     }
   })
 });
 
+// On submit checks each input and calls 
+// error message func if needed. If all 
+// input are valid then grabs data and 
+// pushes to array.
 addBookFORM.addEventListener('submit', (e) => {
   e.preventDefault();
   inputsAll.forEach(input => {
@@ -65,6 +70,9 @@ addBookFORM.addEventListener('submit', (e) => {
   // addBookFORM.reset();
 });
 
+// For each book delete btn add
+// listener and pass dataID to 
+// delete function.
 function addDeleteListeners() {
   const deleteBTNS = document.querySelectorAll('.delete');
   deleteBTNS.forEach(btn => {
@@ -96,6 +104,8 @@ function showError(input) {
   // }) 
 }
 
+// Get form data and pushes props to obj.
+// Then pushes into lib array.
 function getFormDataAndToArray() {
   const formData = new FormData(addBookFORM);
   const bookdata = {};
@@ -107,6 +117,9 @@ function getFormDataAndToArray() {
   generateBooks();
 }
 
+// Clears all books first. Then loops
+// and creates each book record. Adds
+// listners to each rendered book record.
 function generateBooks() {
   // remove all cards before generating new set //
   removeCards();
@@ -133,7 +146,7 @@ function generateBooks() {
   addDeleteListeners();
 }
 
-// removes all cards //
+// Removes all cards. Call in generateBooks.
 function removeCards() {
   const allCards = document.querySelectorAll('.card');
   allCards.forEach(card => {
@@ -141,7 +154,8 @@ function removeCards() {
   })
 }
 
-// delete specified card passed to the deleteBTNs event listener //
+// Delete specified card passed 
+// to the deleteBTNs event listener.
 function deleteOneCard(num) {
   const toBeDeleted = document.querySelector(`[data-card='${num}']`)
   toBeDeleted.remove();
