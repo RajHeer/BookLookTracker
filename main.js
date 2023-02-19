@@ -58,7 +58,10 @@ addBookFORM.addEventListener('submit', (e) => {
       showError(input);
     }
   });
-  getFormDataAndToArray();
+  const inputsArr = Array.from(inputsAll);
+  if ( inputsArr.every(input => input.validity.valid) ) {
+    getFormDataAndToArray();  
+  }
   // addBookFORM.reset();
 });
 
