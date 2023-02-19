@@ -114,11 +114,13 @@ input {
     background-color: ghostwhite;
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
 .card > button {
-    margin-top: 15px;
+    width: 60%;
+    margin: 15px auto;
     color: red;
     font-weight: bold;
     font-family: 'Vollkorn', serif;
