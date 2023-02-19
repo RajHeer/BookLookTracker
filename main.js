@@ -116,6 +116,12 @@ function generateBooks() {
               <p>Author: ${book.author}</p>
               <p>Genre: ${book.genre}</p>
               <p>Pages: ${book.pages}</p>
+              <p> Read?
+                <label class='switch' for='read?'>
+                  <input type='checkbox' name='read?' id='read?'>
+                  <span class="slider round"></span>
+                </label>
+              </p>
               <button data-delete=${index} class='delete'>REMOVE</button>
   `;
   const newBookCard = document.createElement('article');
