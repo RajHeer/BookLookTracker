@@ -9,8 +9,8 @@
 
 body {
     font-family: 'Vollkorn', serif;
-    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), rgb(255, 255, 255) 180px), url(./assets/ashim-d-silva-P8gLaJ-PZL0-unsplash.jpg);
-    background-size: cover;
+    background-image: linear-gradient(to right, rgba(245, 246, 252, 0), rgb(255, 255, 255) 200px), url(./assets/jason-leung-D4YrzSwyIEc-unsplash.jpg);
+    background-size: contain;
 }   
 
 /* MAIN PAGE GRID */
@@ -136,11 +136,11 @@ input {
   }
 
   /* Hide default HTML checkbox */
-.switch input {
+/* .switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
+  } */
   
   /* The slider */
   .slider {
