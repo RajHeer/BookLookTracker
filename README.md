@@ -1,5 +1,7 @@
 # BookLookTracker
-Simple app to track books read or in the process of being read. See 'liveview' [here](https://rajheer.github.io/BookLookTracker/).
+Simple app to track books read or in the process of being read. See 'live-view' [here](https://rajheer.github.io/BookLookTracker/).
+
+The Odin Project (JavaScript) cirriculum. Brief set [here](https://www.theodinproject.com/lessons/node-path-javascript-library).
 
 ## About
 
@@ -19,4 +21,4 @@ Dynamic app to create 'record' cards in CSS grid. User interface via form to ent
 
 1. Fix toggle switch functionality for cards array index [1] upwards.
 
-2. Add method on Book prototype that add 'read' property and 'yes' / 'no' value e.g. find instance in array via ID placed on 'read?' toggle switch and then call method.
+2. Add method on Book prototype that adds 'read' property and 'yes' / 'no' value e.g. find instance in array via ID placed on 'read?' toggle switch and then call method.
