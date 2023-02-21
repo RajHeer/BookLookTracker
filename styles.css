@@ -18,7 +18,6 @@ body {
 .flex_container {
     display: grid;
     grid-template-columns: 230px auto;
-    grid-template-rows: 100px auto;
     height: 100vh;
 }
 
@@ -42,7 +41,7 @@ body {
     position: sticky;
     top: 15px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 2rem;
     width: 40px;
     padding: 0 8px;
@@ -91,9 +90,35 @@ input {
     box-sizing: border-box;
   }
   
-  .error.active {
-    padding: 0.3em;
-  }
+.error.active {
+  padding: 0.3em;
+}
+
+h1 {
+  font-size: 3rem; 
+  position: fixed;
+  color: whitesmoke;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+h1:first-of-type {
+  left: 75px;
+  bottom: 140px;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+}
+
+h1:nth-of-type(2) {
+  bottom: 135px;
+  left: 130px;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+}
+
+h1:nth-of-type(3) {
+  bottom: 20px;
+}
 
 .main_cards {
     display: grid;
