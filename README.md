@@ -17,8 +17,8 @@ Dynamic app to create 'record' cards in CSS grid. User interface via form to ent
 
 4. Functionality to identify and target specific cards to delete from page and array.
 
+5. Custom method on Book prototype that adds a 'read' property to instance and toggles 'yes' / 'no' value as per the 'read?' toggle switch.
+
 ## To do
 
-1. Fix toggle switch functionality for cards array index [1] upwards.
-
-2. Add method on Book prototype that adds 'read' property and 'yes' / 'no' value e.g. find instance in array via ID placed on 'read?' toggle switch and then call method.
+1. Fix so that when specfic book card is deleted current 'read?' status on remaining cards remains when re-rendered.
