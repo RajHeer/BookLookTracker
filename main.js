@@ -70,6 +70,8 @@ addBookFORM.addEventListener('submit', (e) => {
   // addBookFORM.reset();
 });
 
+// Listener on 'read?' toggle to update
+// read status on book instance.
 function addReadListners() {
   const readBTNS = document.querySelectorAll('[data-box]');
   readBTNS.forEach(btn => {
@@ -103,6 +105,11 @@ function Book({bookTitle, author, genre, pages}) {
 
 // FUNCTIONS //
 
+// Note function doesn't work on 
+// first two book cards as objs in
+// array are hardcoded and not created
+// via constructor, hence error when
+// calling this function via read toggle.
 Book.prototype.readToggle = function () {
   !this.read || this.read === 'no' ? this.read = 'yes'
   : this.read = 'no';
@@ -145,13 +152,17 @@ function generateBooks() {
               <p>Author: ${book.author}</p>
               <p>Genre: ${book.genre}</p>
               <p>Pages: ${book.pages}</p>
-              <p> Read?
+              <p class='read_para'> 
+                <span class='read'>Read?</span>
                 <label class='switch' for='read?'>
-                  <input type='checkbox' data-box=${index} name='read?' id='read?'>
+                  <input type='checkbox' 
+                    data-box=${index} name='read?' 
+                    id='read?'>
                 </label>
               </p>
-              <button data-delete=${index} class='delete'>REMOVE</button>
-  `;
+              <button data-delete=${index} 
+                class='delete'>REMOVE</button>
+    `;
   const newBookCard = document.createElement('article');
   newBookCard.setAttribute('data-card', index);
   newBookCard.classList.add('card');
@@ -173,10 +184,12 @@ function removeCards() {
 // Delete specified card passed 
 // to the deleteBTNs event listener.
 function deleteOneCard(num) {
-  const toBeDeleted = document.querySelector(`[data-card='${num}']`)
+  const toBeDeleted = 
+    document.querySelector(`[data-card='${num}']`);
   toBeDeleted.remove();
   library.splice(num, 1);
 }
 
-generateBooks(); // dummy data 'library' is used to generate book cards for page load //
-const removeBTNS = document.querySelectorAll('.remove');
+// dummy data 'library' is used to 
+// generate book cards for page load.
+generateBooks(); 

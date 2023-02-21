@@ -98,7 +98,7 @@ input {
 .main_cards {
     display: grid;
     gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: auto;
 }
 
@@ -116,6 +116,17 @@ input {
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+.read_para {
+  position: relative;
+}
+
+.read {
+  position: absolute;
+  right: 53px;
+  top: 11px;
+
 }
 
 .card > button {
