@@ -131,8 +131,7 @@ function generateBooks() {
               <p>Pages: ${book.pages}</p>
               <p> Read?
                 <label class='switch' for='read?'>
-                  <input type='checkbox' name='read?' id='read?'>
-                  <span class="slider round"></span>
+                  <input type='checkbox' data-box=${index} name='read?' id='read?'>
                 </label>
               </p>
               <button data-delete=${index} class='delete'>REMOVE</button>
