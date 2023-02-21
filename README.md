@@ -22,3 +22,5 @@ Dynamic app to create 'record' cards in CSS grid. User interface via form to ent
 ## To do
 
 1. Fix so that when specfic book card is deleted current 'read?' status on remaining cards remains when re-rendered.
+
+2. Bug where first click on '+' button doesn't open form.

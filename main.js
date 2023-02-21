@@ -65,9 +65,9 @@ addBookFORM.addEventListener('submit', (e) => {
   });
   const inputsArr = Array.from(inputsAll);
   if ( inputsArr.every(input => input.validity.valid) ) {
-    getFormDataAndToArray();  
+    getFormDataAndToArray(); 
+    addBookFORM.reset(); 
   }
-  // addBookFORM.reset();
 });
 
 // Listener on 'read?' toggle to update
@@ -117,14 +117,11 @@ Book.prototype.readToggle = function () {
 }
 
 function showError(input) {
-  // inputsAll.forEach(input => {
     const inputError = input.nextElementSibling;
     if (input.validity.valueMissing) {
       inputError.textContent = "Please enter details.";
     }
-    // Set the styling appropriately
-    inputError.className = "error active";
-  // }) 
+    inputError.className = "error active"; 
 }
 
 // Get form data and pushes props to obj.
@@ -190,6 +187,6 @@ function deleteOneCard(num) {
   library.splice(num, 1);
 }
 
-// dummy data 'library' is used to 
+// Dummy data 'library' is used to 
 // generate book cards for page load.
 generateBooks(); 
