@@ -70,6 +70,15 @@ addBookFORM.addEventListener('submit', (e) => {
   // addBookFORM.reset();
 });
 
+function addReadListners() {
+  const readBTNS = document.querySelectorAll('[data-box]');
+  readBTNS.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      console.log(e.target.dataset.box);
+    });
+  })
+}
+
 // For each book delete btn add
 // listener and pass dataID to 
 // delete function.
@@ -143,6 +152,7 @@ function generateBooks() {
   mainGrid.appendChild(newBookCard);
   })
   addDeleteListeners();
+  addReadListners();
 }
 
 // Removes all cards. Call in generateBooks.
