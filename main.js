@@ -75,6 +75,7 @@ function addReadListners() {
   readBTNS.forEach(btn => {
     btn.addEventListener('click', (e) => {
       library[e.target.dataset.box].readToggle();
+      console.log(library[e.target.dataset.box]);
     });
   })
 }
@@ -103,7 +104,9 @@ function Book({bookTitle, author, genre, pages}) {
 // FUNCTIONS //
 
 Book.prototype.readToggle = function () {
-  console.log(this.bookTitle);
+  !this.read || this.read === 'no' ? this.read = 'yes'
+  : this.read = 'no';
+  console.log(this.read);
 }
 
 function showError(input) {
