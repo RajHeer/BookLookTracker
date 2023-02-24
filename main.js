@@ -145,7 +145,6 @@ function generateBooks() {
   removeCards();
   library.forEach((book, index) => {
     let checked = '';
-    console.log(book.read);
     if (book.read === 'yes') {
       checked = 'checked';
     }
