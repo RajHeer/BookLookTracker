@@ -144,6 +144,11 @@ function generateBooks() {
   // remove all cards before generating new set //
   removeCards();
   library.forEach((book, index) => {
+    let checked = '';
+    console.log(book.read);
+    if (book.read === 'yes') {
+      checked = 'checked';
+    }
     const bookHTML = `
               <h2>${book.bookTitle}</h2>
               <p>Author: ${book.author}</p>
@@ -154,7 +159,7 @@ function generateBooks() {
                 <label class='switch' for='read?'>
                   <input type='checkbox' 
                     data-box=${index} name='read?' 
-                    id='read?'>
+                    id='read?' ${checked}>
                 </label>
               </p>
               <button data-delete=${index} 
