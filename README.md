@@ -22,3 +22,5 @@ Dynamic app to create 'record' cards in CSS grid. User interface via form to ent
 ## To do
 
 1. Bug where first click on '+' button doesn't open form.
+
+2. Refactor code (modules, use closure, remove global variables etc);
