@@ -95,26 +95,28 @@ function addDeleteListeners() {
   })
 }
 
-// CONSTRUCTOR //
-function Book({bookTitle, author, genre, pages}) {
-  this.bookTitle = bookTitle,
-  this.author = author,
-  this.genre = genre,
-  this.pages = pages
+// CLASS - note readToggle() on Book.prototype
+// wont won't work on first two hard-coded library
+// entries as not created with class and don't inherit
+// method
+class Book {
+
+  constructor({bookTitle, author, genre, pages}) {
+    this.bookTitle = bookTitle,
+    this.author = author,
+    this.genre = genre,
+    this.pages = pages
+  }
+
+  readToggle() {
+    !this.read || this.read === 'no' ? this.read = 'yes'
+    : this.read = 'no';
+    console.log(this.read);
+  }
 }
+
 
 // FUNCTIONS //
-
-// Note function doesn't work on 
-// first two book cards as objs in
-// array are hardcoded and not created
-// via constructor, hence error when
-// calling this function via read toggle.
-Book.prototype.readToggle = function () {
-  !this.read || this.read === 'no' ? this.read = 'yes'
-  : this.read = 'no';
-  console.log(this.read);
-}
 
 function showError(input) {
     const inputError = input.nextElementSibling;
